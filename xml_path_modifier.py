@@ -25,4 +25,6 @@ for filename in os.listdir(annot_path):
         myroot = mytree.getroot()
         for path in myroot.iter('path'):
             path.text = f
-        mytree.write(fullname)#writing it to same file 
+        mytree.write(fullname)#writing it to same file
+        flag = 1
+if(flag==1): print("Done")
