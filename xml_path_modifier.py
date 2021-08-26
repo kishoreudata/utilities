@@ -11,7 +11,7 @@ import sys,os
 #img_path = r'C:\Users\BEL\Documents\GKN\Keras-tar\Borderless_table_detection\borderless_tbls_detection-main\images\processed\splitted\train_set'
 img_path = input("Enter images path \n")
 #annotations path
-annot_path=input("Enter annotations path\nh")
+annot_path=input("Enter annotations path\n")
 #annot_path = r'C:\Users\BEL\Documents\GKN\Keras-tar\Borderless_table_detection\borderless_tbls_detection-main\images\processed\splitted\train_set'
 
 #'/path/to/directory'
