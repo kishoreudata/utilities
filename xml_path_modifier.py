@@ -8,9 +8,12 @@ Created on Tue Aug 24 14:48:51 2021
 import xml.etree.ElementTree as ET
 import sys,os
 #images path
-img_path = r'C:\Users\BEL\Documents\GKN\Keras-tar\Borderless_table_detection\borderless_tbls_detection-main\images\processed\splitted\train_set'
+#img_path = r'C:\Users\BEL\Documents\GKN\Keras-tar\Borderless_table_detection\borderless_tbls_detection-main\images\processed\splitted\train_set'
+img_path = input("Enter images path \n")
 #annotations path
-annot_path = r'C:\Users\BEL\Documents\GKN\Keras-tar\Borderless_table_detection\borderless_tbls_detection-main\images\processed\splitted\train_set'
+annot_path=input("Enter annotations path\nh")
+#annot_path = r'C:\Users\BEL\Documents\GKN\Keras-tar\Borderless_table_detection\borderless_tbls_detection-main\images\processed\splitted\train_set'
+
 #'/path/to/directory'
 for filename in os.listdir(annot_path):
     if filename.endswith('.xml'):
