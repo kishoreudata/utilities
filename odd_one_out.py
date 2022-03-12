@@ -39,8 +39,8 @@ def remove_file_extension(a):
     return a
 
 if __name__=="__main__":
-    '''
     #function to find odd one out of couples
+    '''
     #a=['a','a','b','c','c']
     #print(a[3])
     #print(type(a))
@@ -55,6 +55,8 @@ if __name__=="__main__":
     for i in range(len(b)):
         print(b[i])
     '''
+    #function to find odd occurances of any file and corresponding extensions
+    '''
     #a=['1','2','3','2','3']
     #a=['0','1','2','3','2','3','0','4','5']
     #arr=['1.png','2.png','3.png','4.png','1.xml','2.xml']
@@ -63,3 +65,22 @@ if __name__=="__main__":
     b=odd_freq_ele(a)
     print("\nfiles which are single (either image or annotation is missing):")
     for i in range(len(b)):print(b[i])
+    '''
+    
+    #function to find odd files in a directory/folder in system/storage
+    import os
+    curr_path=os.getcwd()#current directory
+    #curr_path=input("enter path of files")
+    dir_list=os.listdir(curr_path)
+    #dir_list=os.scandir(path = ‘.’) #for python 3.5 or higher
+    '''
+    for (root, dirs, file) in os.walk(curr_path):
+        dir_list=[]
+        for f in file:
+            dir_list.append(f)
+    '''
+    a=remove_file_extension(dir_list)
+    b=odd_freq_ele(a)
+    print("\nfiles which are single (either image or annotation is missing):")
+    for i in range(len(b)):print(b[i])
+    
