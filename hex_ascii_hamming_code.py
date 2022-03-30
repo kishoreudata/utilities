@@ -52,23 +52,50 @@ def binToHexa(n):
 	# printing hexadecimal number
 	# array in reverse order
 	print("\n Hexadecimal equivalent of {}: ".format(n), end="")
+	str1 = "" 
 	while i >= 0:
 		print(end=hexaDeciNum[i])
+		#print(type(hexaDeciNum[i]))
+		str1+=hexaDeciNum[i]
 		i = i-1
 	print('\n')
 	#print(hexaDeciNum.decode())
 	#byte_array=bytearray(hexaDeciNum)
 	#byte_array = bytearray.fromhex(hexaDeciNum)
 	#print(byte_array.decode())
-	str1 = "" 
+
     # traverse in the string  
-	for ele in hexaDeciNum: 
-		str1 += ele  
-	byte_array = bytearray.fromhex(str1)
-	print("corresponding ascii value is:  ",byte_array.decode())
+	#for ele in hexaDeciNum: 
+	#	str1 += ele
+	#	str1 = ele+str1
+	#print(str1)
+	#str1.decode("hex")
+	#byte_array = bytearray.fromhex(str1)
+	#print("corresponding ascii value is:  ",byte_array.decode())
 	#print(byte_array.decode())
     
-    
+	print("\n Corresponding ASCII value is : ",hexToASCII(str1))
+# Python3 program to convert hexadecimal
+# string to ASCII format string
+ 
+def hexToASCII(hexx):
+ 
+    # initialize the ASCII code string as empty.
+    ascii = ""
+ 
+    for i in range(0, len(hexx), 2):
+ 
+        # extract two characters from hex string
+        part = hexx[i : i + 2]
+ 
+        # change it into base 16 and
+        # typecast as the character
+        ch = chr(int(part, 16))
+ 
+        # add this char to final ASCII string
+        ascii += ch
+     
+    return ascii    
 # Driver code
 #if __name__ == '__main__':
 	#binToHexa('111101111011')
@@ -155,24 +182,24 @@ elif(option==2): # DETECT ERROR IN RECEIVED HAMMING CODE
     error=sum(int(parity_list) * (2 ** i) for i, parity_list in enumerate(parity_list[::-1]))
     
     if((error)==0):
-        print('There is no error in the hamming code received')
+        print('\nThere is no error in the hamming code received')
 
     elif((error)>=len(h_copy)):
-        print('Error cannot be detected')
+        print('\nError cannot be detected')
 
     else:
-        print('Error is in',error,'bit')
+        print('\nError is in',error,'bit')
 
         if(h_copy[error-1]=='0'):
             h_copy[error-1]='1'
 
         elif(h_copy[error-1]=='1'):
             h_copy[error-1]='0'
-            print('After correction hamming code is:- ')
+            print('\nAfter correction hamming code is:- ')
         h_copy.reverse()
         print(int(''.join(map(str, h_copy))))
         binToHexa(int(''.join(map(str, h_copy))))
 
 else:
-    print('Option entered does not exist')
+    print('\nOption entered does not exist')
 
