@@ -97,13 +97,19 @@ int is_valid_ip(char* ip_str)
 // Driver code
 int main()
 {
-    char ip1[] = "128.0.0.1";
-    char ip2[] = "125.16.100.1";
-    char ip3[] = "125.512.100.1";
-    char ip4[] = "125.512.100.abc";
-    is_valid_ip(ip1) ? cout<<"Valid\n" : cout<<"Not valid\n";
-    is_valid_ip(ip2) ? cout<<"Valid\n" : cout<<"Not valid\n";
-    is_valid_ip(ip3) ? cout<<"Valid\n" : cout<<"Not valid\n";
-    is_valid_ip(ip4) ? cout<<"Valid\n" : cout<<"Not valid\n";
+    // char ip1[] = "128.0.0.1";
+    // char ip2[] = "125.16.100.1";
+    // char ip3[] = "125.512.100.1";
+    // char ip4[] = "125.512.100.abc";
+    // is_valid_ip(ip1) ? cout<<"Valid\n" : cout<<"Not valid\n";
+    // is_valid_ip(ip2) ? cout<<"Valid\n" : cout<<"Not valid\n";
+    // is_valid_ip(ip3) ? cout<<"Valid\n" : cout<<"Not valid\n";
+    // is_valid_ip(ip4) ? cout<<"Valid\n" : cout<<"Not valid\n";
+    cout<< "Enter your IP (IPV4) : \n";
+    string str="";
+    cin >> str;
+    char ip[str.length() + 1]; 
+	strcpy(ip, str.c_str()); 
+    is_valid_ip(ip) ? cout<<"Valid IP\n" : cout<<"Invalid  IP\n";
     return 0;
 }
